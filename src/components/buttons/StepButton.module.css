@@ -1,0 +1,27 @@
+.button {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid var(--ui-accent);
+  border-radius: 3px;
+  color: var(--neutral-text);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.button:hover:not(:disabled) {
+  border-color: var(--soft-text);
+  color: var(--soft-text);
+}
+
+.button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

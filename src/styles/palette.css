@@ -1,0 +1,17 @@
+:root {
+    --soft-text:            #abc9ff;
+    --neutral-text:         #FFFFFF;
+    --hard-text:            #57b3ff;
+    --keyword-text:         #ff7085;
+    --soft-keyword-text:    #ff8ccc;
+    --annotation-color:     #eaa46a;
+    --warning-color:        #b89c7a;
+    --studio-text:          #42ffc2;
+    --soft-studio-text:     #8fffdb;
+    --string-color:         #ffc2a6;
+    --mem-var-color:        #bce0ff;
+    --critical-color:       #c45959;
+    --general-background:   #1a1a1a;
+    --ui-background:        #424242;
+    --ui-accent:            #6e6e6e;
+}

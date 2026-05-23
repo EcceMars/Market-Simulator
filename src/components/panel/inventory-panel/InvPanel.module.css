@@ -1,0 +1,31 @@
+.table {
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  color: var(--neutral-text);
+}
+
+.table thead tr {
+  border-bottom: 1px solid var(--ui-accent);
+}
+
+.table th {
+  text-align: left;
+  font-weight: var(--font-weight-bold);
+  color: var(--soft-text);
+  padding: 0 24px 8px 0;
+  letter-spacing: 0.04em;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+}
+
+.table th:last-child { padding-right: 0; }
+
+.table td {
+  padding: 7px 24px 7px 0;
+}
+
+.table td:last-child { padding-right: 0; }
+
+.wage { color: var(--studio-text); }
