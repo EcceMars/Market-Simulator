@@ -1,7 +1,7 @@
-import type { Product } from "./Product";
+import type { ProductRes } from "./ProductRes";
 
 export interface InventoryEntry {
-    product:Product;
+    product:ProductRes;
     quantity:number;
 }
 

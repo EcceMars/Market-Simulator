@@ -1,4 +1,4 @@
-import type { WorkerType } from '../../data/WorkerType';
+import type { WorkerType } from '../../data/WorkerRes';
 import StepButton from '../../buttons/StepButton';
 import styles from './WorkerTable.module.css';
 

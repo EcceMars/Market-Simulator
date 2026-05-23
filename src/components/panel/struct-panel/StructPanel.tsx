@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Structure } from '../../data/Structure';
+import type { Structure } from '../../data/StructureObj';
 import Panel from '../Panel';
 import WorkerTable from './WorkerTable';
 import InvPanel from '../inventory-panel/InvPanel';
@@ -20,7 +20,7 @@ function StructPanel({ structure }: Props) {
     setData(prev => ({
       ...prev,
       workers: prev.workers.map((w) =>
-        w.WorkerType.name === workerType
+        w.type.name === workerType
           ? { ...w, wage: clamp(parseFloat((w.wage + delta).toFixed(1)), 0) }
           : w
       )

@@ -1,5 +1,5 @@
-import type { Structure } from "./components/data/Structure";
-import type { StructureType } from "./components/data/StructureType";
+import type { Structure } from "./components/data/StructureObj";
+import type { StructureType } from "./components/data/StructureRes";
 import StructPanel from "./components/panel/struct-panel/StructPanel";
 
 const wheatFarmTemplate: StructureType = {

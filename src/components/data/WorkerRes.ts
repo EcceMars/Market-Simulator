@@ -1,14 +1,17 @@
+/*
+    Template for all worker types.
+*/
 import type { GenericData } from "./GenericData";
-import type { Product } from "./Product";
+import type { ProductRes } from "./ProductRes";
 
 export type Strata = 'LOW' | 'MID' | 'HIGH';
 
 export interface Need {
-    product:Product;
+    product:ProductRes;
     quantity:number;
 }
 
-export interface WorkerType extends GenericData {
+export interface WorkerRes extends GenericData {
     strata:Strata;
     needs:Need[];
 }
