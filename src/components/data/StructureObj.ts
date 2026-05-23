@@ -5,7 +5,6 @@ import type { StructureRes } from "./StructureRes";
 import type { Inventory } from "./Inventory";
 import type { WorkerRes } from "./WorkerRes";
 
-// TASK: should this be moved to its own file? Is this the WorkerObj?
 export interface WorkerInstance {
     type:WorkerRes;
     number:number;

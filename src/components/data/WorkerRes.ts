@@ -1,17 +1,13 @@
-/*
-    Template for all worker types.
-*/
-import type { GenericData } from "./GenericData";
-import type { ProductRes } from "./ProductRes";
-
-export type Strata = 'LOW' | 'MID' | 'HIGH';
-
+import type { GenericData }                  from './GenericData';
+import type { Strata, NeedCategory, NeedPriority } from './Types';
+ 
 export interface Need {
-    product:ProductRes;
-    quantity:number;
+    category: NeedCategory;
+    quantity: number;
+    priority: NeedPriority;
 }
-
+ 
 export interface WorkerRes extends GenericData {
-    strata:Strata;
-    needs:Need[];
+    strata: Strata;
+    needs:  Need[];
 }
