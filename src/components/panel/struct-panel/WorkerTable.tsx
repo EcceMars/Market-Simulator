@@ -3,8 +3,8 @@ import StepButton from '../../buttons/StepButton';
 import styles from './WorkerTable.module.css';
 
 type Props = {
-  workers: WorkerType[];
-  onWageChange: (workerName: string, delta: number) => void;
+  workers:WorkerType[];
+  onWageChange: (workerName:string, delta:number) => void;
 };
 
 function WorkerTable({ workers, onWageChange }: Props) {

@@ -9,18 +9,18 @@ type Props = {
   structure: Structure;
 };
 
-function clamp(value: number, min: number, max: number = Infinity): number {
+function clamp(value:number, min:number, max:number = Infinity):number {
   return Math.min(Math.max(value, min), max);
 }
 
 function StructPanel({ structure }: Props) {
   const [data, setData] = useState<Structure>(structure);
 
-  function handleWageChange(workerName: string, delta: number) {
+  function handleWageChange(workerType:string, delta:number) {
     setData(prev => ({
       ...prev,
-      workers: prev.workers.map(w =>
-        w.name === workerName
+      workers: prev.workers.map((w) =>
+        w.WorkerType.name === workerType
           ? { ...w, wage: clamp(parseFloat((w.wage + delta).toFixed(1)), 0) }
           : w
       )
@@ -36,7 +36,7 @@ function StructPanel({ structure }: Props) {
     <div className={styles.scene}>
       <Panel>
         <div className={styles.titleRow}>
-          <p className={styles.title}>{data.name}</p>
+          <p className={styles.title}>{data.template.name}</p>
           <div className={styles.levelBadge}>
             Lv. <span className={styles.levelBox}>{data.level}</span>
           </div>
