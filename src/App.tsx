@@ -1,11 +1,11 @@
-
 import { Structure } from "./components/data/Structure";
 import StructPanel from "./components/panel/struct-panel/StructPanel";
 
 const wheatFarm:Structure = {
-  name:"Wheat Farm",
-  funds: 100,
-  workers: [
+    level: 1,
+    name:"Wheat Farm",
+    funds: 100,
+    workers: [
     { name: "Peasant", icon: "👩‍🌾", description: "", number: 8, wage: 1.0 },
     { name: "Farmer", icon: "🤠", description: "", number: 2, wage: 1.5 },
   ],

@@ -1,76 +1,45 @@
-import { useState } from 'react';
-import type { Structure } from '../../data/Structure';
-import Panel from '../Panel';
-import WorkerTable from './WorkerTable';
-import InvPanel from '../inventory-panel/InvPanel';
-import styles from './StructPanel.module.css';
+import type { WorkerType } from '../../data/WorkerType';
+import StepButton from '../../buttons/StepButton';
+import styles from './WorkerTable.module.css';
 
 type Props = {
-  structure: Structure;
+  workers: WorkerType[];
+  onWageChange: (workerName: string, delta: number) => void;
 };
 
-function clamp(value: number, min: number, max: number = Infinity): number {
-  return Math.min(Math.max(value, min), max);
-}
-
-function StructPanel({ structure }: Props) {
-  const [data, setData] = useState<Structure>(structure);
-
-  function handleWageChange(workerName: string, delta: number) {
-    setData(prev => ({
-      ...prev,
-      workers: prev.workers.map(w =>
-        w.name === workerName
-          ? { ...w, wage: clamp(parseFloat((w.wage + delta).toFixed(1)), 0) }
-          : w
-      )
-    }));
-  }
-
-  const totalWageCost = data.workers.reduce(
-    (sum, w) => sum + w.wage * w.number, 0
-  );
-  const profitability = data.funds - totalWageCost;
-
+function WorkerTable({ workers, onWageChange }: Props) {
   return (
-    <div className={styles.scene}>
-      <Panel>
-        <p className={styles.title}>{data.name}</p>
-        <p className={styles.sectionLabel}>Workforce</p>
-        <WorkerTable
-          workers={data.workers}
-          onWageChange={handleWageChange}
-        />
-        <div className={styles.footer}>
-          <span className={styles.footerItem}>
-            <span className={styles.footerLabel}>Funds</span>
-            <span className={styles.footerValue}>△ {data.funds.toFixed(1)}</span>
-          </span>
-          <span className={styles.footerItem}>
-            <span className={styles.footerLabel}>Costs</span>
-            <span className={styles.footerValue}>△ {totalWageCost.toFixed(1)}</span>
-          </span>
-          <span className={styles.footerItem}>
-            <span className={styles.footerLabel}>Balance</span>
-            <span className={profitability >= 0 ? styles.positive : styles.negative}>
-              △ {profitability.toFixed(1)}
-            </span>
-          </span>
-        </div>
-      </Panel>
-
-      <div className={styles.connector}>
-        <div className={styles.dot} />
-        <div className={styles.line} />
-        <div className={styles.dot} />
-      </div>
-
-      <Panel>
-        <p className={styles.title}>Inventory</p>
-        <InvPanel inventory={data.inventory} />
-      </Panel>
-    </div>
+    <table className={styles.table}>
+      <thead>
+        <tr>
+          <th>Worker</th>
+          <th>Count</th>
+          <th>Wage</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {workers.map((w) => (
+          <tr key={w.name}>
+            <td>
+              <div className={styles.popCell}>
+                <span className={styles.popIcon}>{w.icon}</span>
+                {w.name}
+              </div>
+            </td>
+            <td>{w.number}</td>
+            <td className={styles.wage}>△ {w.wage.toFixed(1)}</td>
+            <td>
+              <div className={styles.controls}>
+                <StepButton label="-" onClick={() => onWageChange(w.name, -0.1)} disabled={w.wage <= 0} />
+                <StepButton label="+" onClick={() => onWageChange(w.name, +0.1)} />
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
-export default StructPanel;
+export default WorkerTable;

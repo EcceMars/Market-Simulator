@@ -35,12 +35,33 @@ function StructPanel({ structure }: Props) {
   return (
     <div className={styles.scene}>
       <Panel>
-        <p className={styles.title}>{data.name}</p>
+        <div className={styles.titleRow}>
+          <p className={styles.title}>{data.name}</p>
+          <div className={styles.levelBadge}>
+            Lv. <span className={styles.levelBox}>{data.level}</span>
+          </div>
+        </div>
         <p className={styles.sectionLabel}>Workforce</p>
         <WorkerTable
           workers={data.workers}
           onWageChange={handleWageChange}
         />
+        <div className={styles.footer}>
+          <span>
+            <span className={styles.footerLabel}>Funds</span>
+            <span className={styles.footerValue}>△ {data.funds.toFixed(1)}</span>
+          </span>
+          <span>
+            <span className={styles.footerLabel}>Costs</span>
+            <span className={styles.footerValue}>△ {totalWageCost.toFixed(1)}</span>
+          </span>
+          <span>
+            <span className={styles.footerLabel}>Balance</span>
+            <span className={profitability >= 0 ? styles.positive : styles.negative}>
+              △ {profitability.toFixed(1)}
+            </span>
+          </span>
+        </div>
       </Panel>
 
       <div className={styles.connector}>

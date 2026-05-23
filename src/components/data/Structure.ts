@@ -3,12 +3,20 @@
     This could be a workshop (a production building), but it could also be a house (a place that consumes products).
 */
 
+import type { StructureType } from "./StructureType";
 import type { Inventory } from "./Inventory";
-import type { Worker } from "./Worker";
+import type { WorkerType } from "./WorkerType";
+
+export interface WorkerInstance {
+    type:WorkerType;
+    number:number;
+    wageOffer:number;
+}
 
 export interface Structure {
-    name:string;
+    template:StructureType
+    level:number;
     funds:number;
     inventory:Inventory;
-    workers:Worker[];
+    workers:WorkerInstance[];
 }

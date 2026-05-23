@@ -1,5 +1,6 @@
 .panel {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   background-color: var(--ui-background);
   border: 1px solid var(--ui-accent);
   border-radius: 6px;
