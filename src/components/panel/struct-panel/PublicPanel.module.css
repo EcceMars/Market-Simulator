@@ -1,0 +1,87 @@
+.titleRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+.title {
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--soft-text);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.publicBadge {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--warning-color);
+    border: 1px solid var(--warning-color);
+    border-radius: 3px;
+    padding: 2px 6px;
+}
+
+.sectionLabel {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--ui-accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.table {
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    white-space: nowrap;
+    color: var(--neutral-text);
+}
+
+.table thead tr {
+    border-bottom: 1px solid var(--ui-accent);
+}
+
+.table th {
+    text-align: left;
+    font-weight: var(--font-weight-bold);
+    color: var(--soft-text);
+    padding: 0 24px 8px 0;
+    letter-spacing: 0.04em;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+}
+
+.table th:last-child { padding-right: 0; }
+.table td { padding: 7px 24px 7px 0; }
+.table td:last-child { padding-right: 0; }
+
+.productCell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid var(--ui-accent);
+}
+
+.footerLabel {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--soft-text);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.negative { color: var(--critical-color); font-size: 0.8125rem; }

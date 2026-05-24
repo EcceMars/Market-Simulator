@@ -1,4 +1,5 @@
 import type { NeedCategory } from '../components/data/Types';
+import type { TaxReport }    from './Tax';
 
 export interface NeedReport {
     category:  NeedCategory;
@@ -10,12 +11,13 @@ export interface NeedReport {
 
 export interface StructureReport {
     name:      string;
-    produced:  boolean;     // had enough inputs to produce this tick
-    funds:     number;      // funds remaining after wages
+    produced:  boolean;
+    funds:     number;
 }
 
 export interface TickReport {
     tick:             number;
     structureReports: StructureReport[];
     needsReport:      NeedReport[];
+    taxReport:        TaxReport;
 }

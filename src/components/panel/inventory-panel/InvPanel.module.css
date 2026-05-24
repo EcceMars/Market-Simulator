@@ -28,4 +28,22 @@
 
 .table td:last-child { padding-right: 0; }
 
-.wage { color: var(--studio-text); }
+.productCell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.productIcon {
+  min-width: 16px;
+  min-height: 16px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.empty {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--ui-accent);
+  font-style: italic;
+}

@@ -1,0 +1,94 @@
+.scene {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.titleRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+.title {
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--soft-text);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.levelBadge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--annotation-color);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.levelBox {
+    background-color: var(--general-background);
+    border: 1px solid var(--ui-accent);
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    color: var(--neutral-text);
+}
+
+.sectionLabel {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--ui-accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.connector {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    flex-shrink: 0;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--ui-accent);
+    flex-shrink: 0;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: var(--ui-accent);
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid var(--ui-accent);
+}
+
+.footerLabel {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--soft-text);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.footerValue { color: var(--neutral-text);   font-size: 0.8125rem; }
+.positive    { color: var(--studio-text);    font-size: 0.8125rem; }
+.negative    { color: var(--critical-color); font-size: 0.8125rem; }

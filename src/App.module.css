@@ -1,0 +1,212 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 160px;
+    width: 100%;
+}
+
+/* ── Treasury bar ── */
+.treasuryBar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--ui-background);
+    border: 1px solid var(--ui-accent);
+    border-radius: 6px;
+    padding: 14px 24px;
+    flex-wrap: wrap;
+}
+
+.treasuryLabel {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--soft-text);
+}
+
+.treasuryValue {
+    font-size: 1rem;
+    color: var(--neutral-text);
+    min-width: 80px;
+}
+
+.deltaPos  { font-size: 0.8125rem; color: var(--studio-text);    }
+.deltaNeg  { font-size: 0.8125rem; color: var(--critical-color); }
+.deltaZero { font-size: 0.8125rem; color: var(--neutral-text);   }
+
+.taxSlots {
+    display: flex;
+    gap: 2rem;
+}
+
+.taxItem {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.taxLabel {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--soft-text);
+}
+
+.taxValue {
+    font-size: 0.8125rem;
+    color: var(--annotation-color);
+}
+
+.taxSlider {
+    width: 100px;
+    accent-color: var(--hard-text);
+    cursor: pointer;
+}
+
+/* ── Needs bar ── */
+.needsBar {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.75rem;
+    font-family: var(--font-sans);
+}
+
+.needMet   { color: var(--studio-text);    }
+.needUnmet { color: var(--critical-color); }
+
+/* ── Panels ── */
+.panels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ── Control panel — fixed bottom left ── */
+.controlPanel {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--ui-background);
+    border: 1px solid var(--ui-accent);
+    border-radius: 6px;
+    padding: 16px;
+    z-index: 100;
+    min-width: 160px;
+}
+
+.tickInfo {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.tickLabel {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--soft-text);
+}
+
+.tickValue {
+    font-size: 1rem;
+    color: var(--neutral-text);
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--ui-accent);
+    margin: 2px 0;
+}
+
+/* ── Speed buttons ── */
+.speedButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.speedBtn {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--soft-text);
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 4px 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.12s, border-color 0.12s;
+}
+
+.speedBtn:hover { color: var(--neutral-text); }
+
+.speedBtnActive {
+    color: var(--neutral-text);
+    border-color: var(--ui-accent);
+}
+
+/* ── Mode buttons ── */
+.modeButtons {
+    display: flex;
+    gap: 6px;
+}
+
+.modeBtn {
+    flex: 1;
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--soft-text);
+    background-color: transparent;
+    border: 1px solid var(--ui-accent);
+    border-radius: 3px;
+    padding: 5px 8px;
+    cursor: pointer;
+    transition: color 0.12s, border-color 0.12s, background-color 0.12s;
+}
+
+.modeBtnActive {
+    color: var(--neutral-text);
+    background-color: var(--general-background);
+    border-color: var(--soft-text);
+}
+
+/* ── End Turn ── */
+.endTurnBtn {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--neutral-text);
+    background-color: transparent;
+    border: 1px solid var(--soft-text);
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    transition: border-color 0.12s, opacity 0.12s;
+}
+
+.endTurnBtn:hover:not(:disabled) {
+    border-color: var(--hard-text);
+    color: var(--hard-text);
+}
+
+.endTurnBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
